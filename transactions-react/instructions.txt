@@ -1,0 +1,37 @@
+sqlite3 database.sqlite
+
+
+CREATE TABLE accounts (
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL,
+    balance REAL NOT NULL
+  );
+  
+  CREATE TABLE transactions (
+    id INTEGER PRIMARY KEY,
+    from_id INTEGER NOT NULL,
+    to_id INTEGER NOT NULL,
+    amount REAL NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );
+  
+
+
+  curl -X POST -H "Content-Type: application/json" -d '{"from":1,"to":2,"amount":100}' http://localhost:5000/api/transactions
+  
+  
+  INSERT INTO accounts (name, balance) VALUES
+  ('Alice', 100.00),
+  ('Bob', 200.00),
+  ('Charlie', 300.00);
+
+  INSERT INTO transactions (from_id, to_id, amount) VALUES
+  (1, 2, 50.00),
+  (2, 3, 75.00),
+  (3, 1, 25.00);
+
+
+
+  ALTER TABLE transactions ADD COLUMN description TEXT;
+
+  DROP TABLE accounts;

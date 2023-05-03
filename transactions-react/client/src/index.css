@@ -1,0 +1,228 @@
+/* set a font type for the webpage */
+@import url("https://fonts.cdnfonts.com/css/playfair-display");
+@import url("https://fonts.cdnfonts.com/css/open-sans");
+@import url("https://fonts.cdnfonts.com/css/merriweather-sans");
+@import url("https://fonts.cdnfonts.com/css/inter");
+
+/* Design token variables*/
+:root {
+  --darkBlue: #002855;
+  --lightBlue: #2570e0;
+  --navFontColor: #666666;
+  --navFontWeight: 500;
+  --white: #ffffff;
+  --textBlack: #000000;
+  --textWhite: #000000;
+  --maxWidth: 900px;
+  --headingL: 2rem;
+  --headingM: 2rem;
+  --body: 2rem;
+  --caption: 2rem;
+  --merriFont: "Merriweather Sans";
+  --openFont: "Open Sans";
+  --playFont: "Playfair Display";
+  --interFont: "Inter";
+  --iconMediumSize: 1.5rem;
+
+  --textBody: #000000ae;
+  --textBodyHeading: #000000d5;
+
+  --responsiveMargin: 0 1rem 0 1rem;
+  --responsivePadding: 0 0.5rem 0 0.5rem;
+
+  --inputBorder: 1px solid #00000011;
+
+  --boxShadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  /* --boxShadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  /* --boxShadow: 0 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06); */
+
+  --flashAnimation: fadeOut 3s forwards;
+  --flashAnimationDelay: 3s;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(213, 213, 213, 0.518);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.transactionsApp {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+}
+
+.topCTA {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.topCTA ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 1.5rem;
+}
+
+.mainCTA {
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.4rem;
+  background-color: white;
+  color: black;
+  border: 1px solid var(--navFontColor);
+  cursor: pointer;
+}
+
+.mainCTA:hover {
+  background-color: var(--lightBlue);
+  color: white;
+  border: 1px solid var(--lightBlue);
+}
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+details {
+  max-width: 600px;
+  max-height: 80%;
+  overflow: auto;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.tableFooter {
+  height: 30px;
+  background-color: rebeccapurple;
+  display: none;
+}
+tbody:empty + tfoot td.long-cell::before {
+  content: "List empty, start adding transactions! 🤑";
+}
+
+#picker {
+  margin-top: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 40px auto;
+  table-layout: fixed;
+  box-shadow: var(--boxShadow);
+  border-radius: 10px;
+  padding: 2rem;
+  background-color: white;
+}
+thead {
+  background-color: rgba(218, 218, 218, 0.335);
+  color: black;
+  /* padding: 8px; */
+}
+th {
+  text-align: left;
+  padding: 20px 20px;
+  cursor: pointer;
+}
+
+thead th:first-child {
+  border-top-left-radius: 10px;
+}
+
+thead th:last-child {
+  border-top-right-radius: 10px;
+}
+td {
+  text-align: left;
+  padding: 8px 20px;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+tr:last-child {
+  border-bottom: 1px solid rgb(255, 255, 255) !important;
+}
+
+tr:hover {
+  background-color: #f2f2f2;
+  border: none;
+  outline: none;
+}
+
+.tableButton {
+  /* background-color: white; */
+  border: none;
+  outline: none;
+  background: none;
+  color: var(--lightBlue);
+  font: inherit;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.deleteButton {
+  color: red;
+}
+.editButton {
+  color: rgb(19, 18, 18);
+}
+
+.formInput {
+  border: 1px solid #ccc;
+  height: 100%;
+  width: 100%;
+}
+
+#newTransactionForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+  font-weight: 600;
+}
+#newTransactionForm button {
+  margin-top: 1rem;
+}
+
+input {
+  border: none;
+  outline: none;
+  height: 90%;
+  width: 90%;
+  box-shadow: var(--boxShadow);
+  border-radius: 0.2rem;
+  margin-top: 0.5rem;
+  padding: 0.2rem 0.5rem;
+}
